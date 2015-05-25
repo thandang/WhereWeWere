@@ -90,7 +90,7 @@
     [super viewWillAppear:animated];
     if ([kAppDelegate isSavedImage]) {
         [kAppDelegate setIsSavedImage:NO];
-        [kAppDelegate retrieveLocationWith:self callback:@selector(resultLocation:) andCallbackError:@selector(resultLocationError:)];
+        [self processPhoto];
     }
 }
 
@@ -253,6 +253,8 @@
 }
 
 - (void) processPhoto {
+    [self showHUD];
+    [kAppDelegate retrieveLocationWith:self callback:@selector(resultLocation:) andCallbackError:@selector(resultLocationError:)];
     if ([kAppDelegate imageCaptured]) {
         if (!_curentPhoto) {
             _curentPhoto = [[WWPhoto alloc] init];
@@ -260,7 +262,6 @@
         [_curentPhoto setDateSaved:[NSDate date]];
         [_curentPhoto setImage:[kAppDelegate imageCaptured]];
         [_curentPhoto setName:[WWUtils dateToString:[NSDate date] withFormat:kDateFormat]];
-        //            [self startProgressDetail:photo];
     }
 }
 
@@ -270,6 +271,7 @@
         _viewPhotoResult.transform = CGAffineTransformIdentity;
         _imvResult.image = [kAppDelegate imageCaptured];
     } completion:^(BOOL finished) {
+        [self hideHUD];
         _viewPhotoResult.hidden = NO;
     }];
 }
@@ -288,9 +290,16 @@
 
 - (void) applyResult {
     UIAlertView *alr = [[UIAlertView alloc] initWithTitle:@"Input" message:@"Please enter name and notes" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    [[alr textFieldAtIndex:0] setPlaceholder:@"Enter name"];
-    [[alr textFieldAtIndex:1] setPlaceholder:@"Enter notes"];
-    alr.alertViewStyle = UIAlertViewStylePlainTextInput;
+    
+    alr.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    UITextField * alertTextField1 = [alr textFieldAtIndex:0];
+    alertTextField1.keyboardType = UIKeyboardTypeDefault;
+    alertTextField1.placeholder = @"Enter name";
+    
+    UITextField * alertTextField2 = [alr textFieldAtIndex:1];
+    alertTextField2.keyboardType = UIKeyboardTypeDefault;
+    alertTextField2.placeholder = @"Enter notes";
+
     [alr show];
 }
 
@@ -340,6 +349,7 @@
         NSString *notesStr = notes.text ? notes.text : @"";
         _curentPhoto.name = nameStr;
         _curentPhoto.notes = notesStr;
+        [self showHUD];
         [[SDMDataManager sharedInstance] setController:self];
         [[SDMDataManager sharedInstance] savePhoto:_curentPhoto];
     }
@@ -352,6 +362,7 @@
 
 - (void) operation:(SDMQueryOperation *)op didInsertOrUpdateSuccess:(BOOL)success {
     [self hideResult];
+    [self hideHUD];
 }
 
 #pragma mark - ADBanner Delegate

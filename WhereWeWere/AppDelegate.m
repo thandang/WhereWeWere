@@ -75,13 +75,13 @@
         }
         // The user has not enabled any location services. Request background authorization.
         else if (status == kCLAuthorizationStatusNotDetermined) {
-            if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-                [_locationManager requestWhenInUseAuthorization];
+            if ([_locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+                [_locationManager requestAlwaysAuthorization];
             }
         }
     } else {
         if ([CLLocationManager locationServicesEnabled] == NO || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
-            UIAlertView *alr = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"message", nil) message:NSLocalizedString(@"location_confirm", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:NSLocalizedString(@"setting", nil), nil];
+            UIAlertView *alr = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"message", nil) message:@"Turn On Location Services to Allow AlphaOmega to Determine Your Location" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:NSLocalizedString(@"setting", nil), nil];
             [alr show];
             DEBUG_LOG(@"disable or permission denied");
         } else {
