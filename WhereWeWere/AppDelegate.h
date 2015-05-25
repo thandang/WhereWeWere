@@ -7,11 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate> {
+    CLLocationManager   *_locationManager;
+    id      _ownerLocation;
+    SEL     _callbackLocation;
+    SEL     _callbackLocationError;
+    BOOL    _getLocationOneTime;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void) retrieveLocationWith:(id)owner callback:(SEL)callback andCallbackError:(SEL)callbackError;
 
 @end
 

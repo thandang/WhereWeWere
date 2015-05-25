@@ -17,6 +17,13 @@
 		757152401B13092A00541BDB /* WWCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7571523F1B13092A00541BDB /* WWCommonViewController.m */; };
 		757152431B13096700541BDB /* WWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152421B13096700541BDB /* WWMainViewController.m */; };
 		757152461B13097B00541BDB /* WWHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152451B13097B00541BDB /* WWHistoryViewController.m */; };
+		757152481B130A1800541BDB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757152471B130A1800541BDB /* CoreLocation.framework */; };
+		7571524A1B130A1D00541BDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757152491B130A1D00541BDB /* UIKit.framework */; };
+		7571524C1B130A2700541BDB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571524B1B130A2700541BDB /* Foundation.framework */; };
+		7571524E1B130A2C00541BDB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571524D1B130A2C00541BDB /* MapKit.framework */; };
+		757152501B130A3100541BDB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571524F1B130A3100541BDB /* libz.dylib */; };
+		757152521B130A3800541BDB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 757152511B130A3800541BDB /* libsqlite3.dylib */; };
+		757152551B130B1C00541BDB /* WWUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152541B130B1C00541BDB /* WWUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,15 @@
 		757152421B13096700541BDB /* WWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWMainViewController.m; sourceTree = "<group>"; };
 		757152441B13097B00541BDB /* WWHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWHistoryViewController.h; sourceTree = "<group>"; };
 		757152451B13097B00541BDB /* WWHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWHistoryViewController.m; sourceTree = "<group>"; };
+		757152471B130A1800541BDB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		757152491B130A1D00541BDB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7571524B1B130A2700541BDB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7571524D1B130A2C00541BDB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7571524F1B130A3100541BDB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		757152511B130A3800541BDB /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		757152531B130B1C00541BDB /* WWUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWUtils.h; sourceTree = "<group>"; };
+		757152541B130B1C00541BDB /* WWUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWUtils.m; sourceTree = "<group>"; };
+		757152561B130B2C00541BDB /* WWConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757152521B130A3800541BDB /* libsqlite3.dylib in Frameworks */,
+				757152501B130A3100541BDB /* libz.dylib in Frameworks */,
+				7571524E1B130A2C00541BDB /* MapKit.framework in Frameworks */,
+				7571524C1B130A2700541BDB /* Foundation.framework in Frameworks */,
+				7571524A1B130A1D00541BDB /* UIKit.framework in Frameworks */,
+				757152481B130A1800541BDB /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +94,12 @@
 		757152031B13085C00541BDB = {
 			isa = PBXGroup;
 			children = (
+				757152511B130A3800541BDB /* libsqlite3.dylib */,
+				7571524F1B130A3100541BDB /* libz.dylib */,
+				7571524D1B130A2C00541BDB /* MapKit.framework */,
+				7571524B1B130A2700541BDB /* Foundation.framework */,
+				757152491B130A1D00541BDB /* UIKit.framework */,
+				757152471B130A1800541BDB /* CoreLocation.framework */,
 				7571520E1B13085C00541BDB /* WhereWeWere */,
 				757152281B13085C00541BDB /* WhereWeWereTests */,
 				7571520D1B13085C00541BDB /* Products */,
@@ -158,6 +186,9 @@
 		757152371B13089200541BDB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				757152531B130B1C00541BDB /* WWUtils.h */,
+				757152541B130B1C00541BDB /* WWUtils.m */,
+				757152561B130B2C00541BDB /* WWConstants.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -294,6 +325,7 @@
 				757152181B13085C00541BDB /* ViewController.m in Sources */,
 				757152401B13092A00541BDB /* WWCommonViewController.m in Sources */,
 				757152151B13085C00541BDB /* AppDelegate.m in Sources */,
+				757152551B130B1C00541BDB /* WWUtils.m in Sources */,
 				757152461B13097B00541BDB /* WWHistoryViewController.m in Sources */,
 				757152431B13096700541BDB /* WWMainViewController.m in Sources */,
 				757152121B13085C00541BDB /* main.m in Sources */,
