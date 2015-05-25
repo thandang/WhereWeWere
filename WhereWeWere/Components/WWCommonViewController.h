@@ -10,4 +10,7 @@
 
 @interface WWCommonViewController : UIViewController
 
+- (void) showHUD;
+- (void) hideHUD;
+
 @end

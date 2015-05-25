@@ -25,6 +25,9 @@
         self.photoId = [rs intForColumn:kPhotoId];
         self.name = [rs stringForColumn:kName];
         self.dateSaved = [WWUtils stringToDateTime:[rs stringForColumn:kDateSave] withFormat:kDateTimeFormatServer];
+        self.latitude = [rs doubleForColumn:kLatitude];
+        self.longitude = [rs doubleForColumn:kLongitude];
+        self.notes = [rs stringForColumn:kNotes];
     }
     return self;
 }

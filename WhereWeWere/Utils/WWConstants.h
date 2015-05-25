@@ -76,6 +76,9 @@
 #define kName       @"name"
 #define kDateSave   @"date_saved"
 #define kPhotoTable  @"photo"
+#define kLatitude   @"latitude"
+#define kLongitude  @"longitude"
+#define kNotes      @"notes"
 
 
 #define kTagCustomCell  117
@@ -96,4 +99,4 @@ _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
 Stuff; \
 _Pragma("clang diagnostic pop") \
 } while (0)
-#endif
+

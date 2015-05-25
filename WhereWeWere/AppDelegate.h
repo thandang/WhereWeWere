@@ -19,6 +19,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, strong) UIImage   *imageCaptured;
+@property (nonatomic, assign) BOOL      isSavedImage;
+
 - (void) retrieveLocationWith:(id)owner callback:(SEL)callback andCallbackError:(SEL)callbackError;
 
 @end

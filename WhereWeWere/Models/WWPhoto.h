@@ -13,10 +13,12 @@
 
 @property (nonatomic, assign) NSInteger photoId;
 @property (nonatomic, strong) NSString  *name;
-@property (nonatomic, strong) NSString  *photoDescription;
+@property (nonatomic, strong) NSString  *notes;
 @property (nonatomic, strong) NSDate    *dateSaved;
 @property (nonatomic, strong) UIImage   *image;
 @property (nonatomic, strong) UIImage   *thumbnail;
+@property (nonatomic, assign) double     latitude;
+@property (nonatomic, assign) double     longitude;
 
 - (instancetype) initFromResultSet:(FMResultSet *)rs;
 

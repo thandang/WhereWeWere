@@ -8,7 +8,7 @@
 
 #import "SDMQueryOperation.h"
 #import "FMDatabase.h"
-#import "FFPhoto.h"
+#import "WWPhoto.h"
 
 @interface SDMQueryOperation ()
 
@@ -82,7 +82,7 @@
     FMResultSet *rs = [_db executeQuery:query];
     NSMutableArray *resultArr = [[NSMutableArray alloc] init];
     while ([rs next]) {
-        FFPhoto *photo = [[FFPhoto alloc] initFromResultSet:rs];
+        WWPhoto *photo = [[WWPhoto alloc] initFromResultSet:rs];
         [resultArr addObject:photo];
     }
     return resultArr;

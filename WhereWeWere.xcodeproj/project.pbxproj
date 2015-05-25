@@ -41,7 +41,20 @@
 		36A3938C1B1373B900286664 /* database.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 36A393871B1373B900286664 /* database.sqlite */; };
 		36A3938D1B1373B900286664 /* SDMDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393891B1373B900286664 /* SDMDataManager.m */; };
 		36A3938E1B1373B900286664 /* SDMQueryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A3938B1B1373B900286664 /* SDMQueryOperation.m */; };
-		36A393911B1373C700286664 /* WWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393901B1373C700286664 /* WWPhoto.m */; };
+		36A393A51B1383EA00286664 /* HHAnnotaionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393941B1383EA00286664 /* HHAnnotaionView.m */; };
+		36A393A61B1383EA00286664 /* HHAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393961B1383EA00286664 /* HHAnnotation.m */; };
+		36A393A71B1383EA00286664 /* HHDetailKaraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393981B1383EA00286664 /* HHDetailKaraView.m */; };
+		36A393A81B1383EA00286664 /* HHDetailKaraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A393991B1383EA00286664 /* HHDetailKaraView.xib */; };
+		36A393A91B1383EA00286664 /* HHMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A3939B1B1383EA00286664 /* HHMapView.m */; };
+		36A393AA1B1383EA00286664 /* HHRouteItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A3939D1B1383EA00286664 /* HHRouteItem.m */; };
+		36A393AB1B1383EA00286664 /* HHRouteStepItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A3939F1B1383EA00286664 /* HHRouteStepItem.m */; };
+		36A393AC1B1383EA00286664 /* HHShopInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393A11B1383EA00286664 /* HHShopInfoView.m */; };
+		36A393AD1B1383EA00286664 /* HHShopInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A393A21B1383EA00286664 /* HHShopInfoView.xib */; };
+		36A393AE1B1383EA00286664 /* HHTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393A41B1383EA00286664 /* HHTouchView.m */; };
+		36A393B11B13852F00286664 /* WWMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393B01B13852F00286664 /* WWMapViewController.m */; };
+		36A393B41B13855200286664 /* WWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393B31B13855200286664 /* WWPhoto.m */; };
+		36A393B91B1385BF00286664 /* AOCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393B61B1385BF00286664 /* AOCaptureManager.m */; };
+		36A393BA1B1385BF00286664 /* AOCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393B81B1385BF00286664 /* AOCaptureViewController.m */; };
 		757152121B13085C00541BDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152111B13085C00541BDB /* main.m */; };
 		757152151B13085C00541BDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152141B13085C00541BDB /* AppDelegate.m */; };
 		757152181B13085C00541BDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152171B13085C00541BDB /* ViewController.m */; };
@@ -137,8 +150,32 @@
 		36A393891B1373B900286664 /* SDMDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDMDataManager.m; path = CoreData/SDMDataManager.m; sourceTree = "<group>"; };
 		36A3938A1B1373B900286664 /* SDMQueryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDMQueryOperation.h; path = CoreData/SDMQueryOperation.h; sourceTree = "<group>"; };
 		36A3938B1B1373B900286664 /* SDMQueryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDMQueryOperation.m; path = CoreData/SDMQueryOperation.m; sourceTree = "<group>"; };
-		36A3938F1B1373C700286664 /* WWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWPhoto.h; sourceTree = "<group>"; };
-		36A393901B1373C700286664 /* WWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWPhoto.m; sourceTree = "<group>"; };
+		36A393931B1383EA00286664 /* HHAnnotaionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHAnnotaionView.h; path = ViewAndControllers/MapViews/HHAnnotaionView.h; sourceTree = "<group>"; };
+		36A393941B1383EA00286664 /* HHAnnotaionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHAnnotaionView.m; path = ViewAndControllers/MapViews/HHAnnotaionView.m; sourceTree = "<group>"; };
+		36A393951B1383EA00286664 /* HHAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHAnnotation.h; path = ViewAndControllers/MapViews/HHAnnotation.h; sourceTree = "<group>"; };
+		36A393961B1383EA00286664 /* HHAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHAnnotation.m; path = ViewAndControllers/MapViews/HHAnnotation.m; sourceTree = "<group>"; };
+		36A393971B1383EA00286664 /* HHDetailKaraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHDetailKaraView.h; path = ViewAndControllers/MapViews/HHDetailKaraView.h; sourceTree = "<group>"; };
+		36A393981B1383EA00286664 /* HHDetailKaraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHDetailKaraView.m; path = ViewAndControllers/MapViews/HHDetailKaraView.m; sourceTree = "<group>"; };
+		36A393991B1383EA00286664 /* HHDetailKaraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HHDetailKaraView.xib; path = ViewAndControllers/MapViews/HHDetailKaraView.xib; sourceTree = "<group>"; };
+		36A3939A1B1383EA00286664 /* HHMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHMapView.h; path = ViewAndControllers/MapViews/HHMapView.h; sourceTree = "<group>"; };
+		36A3939B1B1383EA00286664 /* HHMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHMapView.m; path = ViewAndControllers/MapViews/HHMapView.m; sourceTree = "<group>"; };
+		36A3939C1B1383EA00286664 /* HHRouteItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHRouteItem.h; path = ViewAndControllers/MapViews/HHRouteItem.h; sourceTree = "<group>"; };
+		36A3939D1B1383EA00286664 /* HHRouteItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHRouteItem.m; path = ViewAndControllers/MapViews/HHRouteItem.m; sourceTree = "<group>"; };
+		36A3939E1B1383EA00286664 /* HHRouteStepItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHRouteStepItem.h; path = ViewAndControllers/MapViews/HHRouteStepItem.h; sourceTree = "<group>"; };
+		36A3939F1B1383EA00286664 /* HHRouteStepItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHRouteStepItem.m; path = ViewAndControllers/MapViews/HHRouteStepItem.m; sourceTree = "<group>"; };
+		36A393A01B1383EA00286664 /* HHShopInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHShopInfoView.h; path = ViewAndControllers/MapViews/HHShopInfoView.h; sourceTree = "<group>"; };
+		36A393A11B1383EA00286664 /* HHShopInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHShopInfoView.m; path = ViewAndControllers/MapViews/HHShopInfoView.m; sourceTree = "<group>"; };
+		36A393A21B1383EA00286664 /* HHShopInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HHShopInfoView.xib; path = ViewAndControllers/MapViews/HHShopInfoView.xib; sourceTree = "<group>"; };
+		36A393A31B1383EA00286664 /* HHTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HHTouchView.h; path = ViewAndControllers/MapViews/HHTouchView.h; sourceTree = "<group>"; };
+		36A393A41B1383EA00286664 /* HHTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HHTouchView.m; path = ViewAndControllers/MapViews/HHTouchView.m; sourceTree = "<group>"; };
+		36A393AF1B13852F00286664 /* WWMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWMapViewController.h; path = ViewAndControllers/WWMapViewController.h; sourceTree = "<group>"; };
+		36A393B01B13852F00286664 /* WWMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWMapViewController.m; path = ViewAndControllers/WWMapViewController.m; sourceTree = "<group>"; };
+		36A393B21B13855200286664 /* WWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWPhoto.h; path = Models/WWPhoto.h; sourceTree = "<group>"; };
+		36A393B31B13855200286664 /* WWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWPhoto.m; path = Models/WWPhoto.m; sourceTree = "<group>"; };
+		36A393B51B1385BF00286664 /* AOCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOCaptureManager.h; path = Components/AOCaptureManager.h; sourceTree = "<group>"; };
+		36A393B61B1385BF00286664 /* AOCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOCaptureManager.m; path = Components/AOCaptureManager.m; sourceTree = "<group>"; };
+		36A393B71B1385BF00286664 /* AOCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOCaptureViewController.h; path = Components/AOCaptureViewController.h; sourceTree = "<group>"; };
+		36A393B81B1385BF00286664 /* AOCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOCaptureViewController.m; path = Components/AOCaptureViewController.m; sourceTree = "<group>"; };
 		7571520C1B13085C00541BDB /* WhereWeWere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereWeWere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757152101B13085C00541BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757152111B13085C00541BDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -278,6 +315,31 @@
 			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		36A393921B1383CB00286664 /* MapViews */ = {
+			isa = PBXGroup;
+			children = (
+				36A393931B1383EA00286664 /* HHAnnotaionView.h */,
+				36A393941B1383EA00286664 /* HHAnnotaionView.m */,
+				36A393951B1383EA00286664 /* HHAnnotation.h */,
+				36A393961B1383EA00286664 /* HHAnnotation.m */,
+				36A393971B1383EA00286664 /* HHDetailKaraView.h */,
+				36A393981B1383EA00286664 /* HHDetailKaraView.m */,
+				36A393991B1383EA00286664 /* HHDetailKaraView.xib */,
+				36A3939A1B1383EA00286664 /* HHMapView.h */,
+				36A3939B1B1383EA00286664 /* HHMapView.m */,
+				36A3939C1B1383EA00286664 /* HHRouteItem.h */,
+				36A3939D1B1383EA00286664 /* HHRouteItem.m */,
+				36A3939E1B1383EA00286664 /* HHRouteStepItem.h */,
+				36A3939F1B1383EA00286664 /* HHRouteStepItem.m */,
+				36A393A01B1383EA00286664 /* HHShopInfoView.h */,
+				36A393A11B1383EA00286664 /* HHShopInfoView.m */,
+				36A393A21B1383EA00286664 /* HHShopInfoView.xib */,
+				36A393A31B1383EA00286664 /* HHTouchView.h */,
+				36A393A41B1383EA00286664 /* HHTouchView.m */,
+			);
+			name = MapViews;
+			sourceTree = "<group>";
+		};
 		757152031B13085C00541BDB = {
 			isa = PBXGroup;
 			children = (
@@ -348,12 +410,15 @@
 		757152351B13088300541BDB /* ViewAndControllers */ = {
 			isa = PBXGroup;
 			children = (
+				36A393921B1383CB00286664 /* MapViews */,
 				36A3937E1B1373A500286664 /* EECollectionFlowLayout.h */,
 				36A3937F1B1373A500286664 /* EECollectionFlowLayout.m */,
 				36A393801B1373A500286664 /* WWHistoryViewController.h */,
 				36A393811B1373A500286664 /* WWHistoryViewController.m */,
 				36A393821B1373A500286664 /* WWMainViewController.h */,
 				36A393831B1373A500286664 /* WWMainViewController.m */,
+				36A393AF1B13852F00286664 /* WWMapViewController.h */,
+				36A393B01B13852F00286664 /* WWMapViewController.m */,
 				7571523B1B1308C900541BDB /* Views */,
 			);
 			name = ViewAndControllers;
@@ -362,6 +427,10 @@
 		757152361B13088B00541BDB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				36A393B51B1385BF00286664 /* AOCaptureManager.h */,
+				36A393B61B1385BF00286664 /* AOCaptureManager.m */,
+				36A393B71B1385BF00286664 /* AOCaptureViewController.h */,
+				36A393B81B1385BF00286664 /* AOCaptureViewController.m */,
 				7571523E1B13092A00541BDB /* WWCommonViewController.h */,
 				7571523F1B13092A00541BDB /* WWCommonViewController.m */,
 			);
@@ -394,8 +463,8 @@
 		757152391B1308A000541BDB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				36A3938F1B1373C700286664 /* WWPhoto.h */,
-				36A393901B1373C700286664 /* WWPhoto.m */,
+				36A393B21B13855200286664 /* WWPhoto.h */,
+				36A393B31B13855200286664 /* WWPhoto.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -508,6 +577,8 @@
 				36A393671B13736900286664 /* FontAwesome.otf in Resources */,
 				7571521D1B13085C00541BDB /* Images.xcassets in Resources */,
 				36A393681B13736900286664 /* foundation-icons.ttf in Resources */,
+				36A393AD1B1383EA00286664 /* HHShopInfoView.xib in Resources */,
+				36A393A81B1383EA00286664 /* HHDetailKaraView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,21 +596,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A393A61B1383EA00286664 /* HHAnnotation.m in Sources */,
 				36A393411B1372EE00286664 /* UIColor+BFPaperColors.m in Sources */,
+				36A393B11B13852F00286664 /* WWMapViewController.m in Sources */,
 				36A3933E1B1372EE00286664 /* NSDate+Util.m in Sources */,
-				36A393911B1373C700286664 /* WWPhoto.m in Sources */,
 				36A393451B1372EE00286664 /* UIImage+Util.m in Sources */,
 				36A393441B1372EE00286664 /* UIImage+RoundedCorner.m in Sources */,
+				36A393AB1B1383EA00286664 /* HHRouteStepItem.m in Sources */,
 				36A3938D1B1373B900286664 /* SDMDataManager.m in Sources */,
 				36A3933D1B1372EE00286664 /* NSData+Util.m in Sources */,
 				36A3933F1B1372EE00286664 /* NSDictionary+NotNullValue.m in Sources */,
 				757152181B13085C00541BDB /* ViewController.m in Sources */,
+				36A393B41B13855200286664 /* WWPhoto.m in Sources */,
 				757152401B13092A00541BDB /* WWCommonViewController.m in Sources */,
+				36A393AC1B1383EA00286664 /* HHShopInfoView.m in Sources */,
 				36A393841B1373A500286664 /* EECollectionFlowLayout.m in Sources */,
+				36A393A71B1383EA00286664 /* HHDetailKaraView.m in Sources */,
 				36A3934C1B13731800286664 /* BFPaperButton.m in Sources */,
 				757152151B13085C00541BDB /* AppDelegate.m in Sources */,
 				36A393481B1372EE00286664 /* WWUtils.m in Sources */,
 				36A393461B1372EE00286664 /* UILabel+DynamicHeight.m in Sources */,
+				36A393A91B1383EA00286664 /* HHMapView.m in Sources */,
 				36A393641B13736900286664 /* FAKIcon.m in Sources */,
 				36A393471B1372EE00286664 /* UIView+Util.m in Sources */,
 				36A393851B1373A500286664 /* WWHistoryViewController.m in Sources */,
@@ -547,11 +624,16 @@
 				36A393421B1372EE00286664 /* UIImage+Alpha.m in Sources */,
 				36A393631B13736900286664 /* FAKFoundationIcons.m in Sources */,
 				36A3936D1B13738600286664 /* MBProgressHUD.m in Sources */,
+				36A393BA1B1385BF00286664 /* AOCaptureViewController.m in Sources */,
+				36A393B91B1385BF00286664 /* AOCaptureManager.m in Sources */,
 				36A3938E1B1373B900286664 /* SDMQueryOperation.m in Sources */,
+				36A393AE1B1383EA00286664 /* HHTouchView.m in Sources */,
 				36A393661B13736900286664 /* FAKZocial.m in Sources */,
 				36A393401B1372EE00286664 /* NSString+Util.m in Sources */,
 				36A393431B1372EE00286664 /* UIImage+Resize.m in Sources */,
 				36A393861B1373A500286664 /* WWMainViewController.m in Sources */,
+				36A393A51B1383EA00286664 /* HHAnnotaionView.m in Sources */,
+				36A393AA1B1383EA00286664 /* HHRouteItem.m in Sources */,
 				36A393651B13736900286664 /* FAKIonIcons.m in Sources */,
 				36A3937A1B13739100286664 /* FMDatabaseAdditions.m in Sources */,
 				36A3937D1B13739100286664 /* FMResultSet.m in Sources */,
