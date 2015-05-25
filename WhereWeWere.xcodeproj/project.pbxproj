@@ -769,11 +769,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: hoa tran (XDA76K73J6)";
 				GCC_PREFIX_HEADER = "WhereWeWere/WhereWeWere-Prefix.pch";
 				INFOPLIST_FILE = WhereWeWere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1e22a503-081c-41fb-8c25-f7602576e750";
 			};
 			name = Debug;
 		};
@@ -782,11 +784,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: hoa tran (XDA76K73J6)";
 				GCC_PREFIX_HEADER = "WhereWeWere/WhereWeWere-Prefix.pch";
 				INFOPLIST_FILE = WhereWeWere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1e22a503-081c-41fb-8c25-f7602576e750";
 			};
 			name = Release;
 		};

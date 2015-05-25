@@ -90,8 +90,8 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     NSDictionary *dictParam = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld", (long)photo.photoId], kPhotoId,
                                photo.name, kName,
-                               [WWUtils dateToString:photo.dateSaved withFormat:kDateTimeFormatServer], kDateSave, nil];
-    NSString *query = [NSString stringWithFormat:@"INSERT INTO %@ VALUES(:%@, :%@, :%@)", kPhotoTable, kPhotoId, kName, kDateSave];
+                               [WWUtils dateToString:photo.dateSaved withFormat:kDateTimeFormatServer], kDateSave, [@(photo.latitude) stringValue], kLatitude, [@(photo.longitude) stringValue], kLongitude, photo.notes, kNotes, nil];
+    NSString *query = [NSString stringWithFormat:@"INSERT INTO %@ VALUES(:%@, :%@, :%@, :%@, :%@, :%@)", kPhotoTable, kPhotoId, kName, kDateSave, kLatitude, kLongitude, kNotes];
     SDMQueryOperation *opAction = [[SDMQueryOperation alloc] initWithQuery:query paramInsert:dictParam onTable:kPhotoTable onDB:_database type:INSERT_QUERY];
     opAction.delegate = self.controller;
     [self.queryQueue addOperation:opAction];

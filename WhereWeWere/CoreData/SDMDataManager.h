@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FMDatabase.h"
-@class FFPhoto;
+@class WWPhoto;
 
 @interface SDMDataManager : NSObject
 
@@ -19,7 +19,7 @@
 - (void) close;
 - (void) cancelAllOperation;
 
-- (void) savePhoto: (FFPhoto *)photo;
+- (void) savePhoto: (WWPhoto *)photo;
 - (void) getPhotos;
 - (void) deletePhoto:(NSInteger)photoId;
 

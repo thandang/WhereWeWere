@@ -14,6 +14,12 @@
 #import "SDMDataManager.h"
 #import "SDMQueryOperation.h"
 #import "FAKFontAwesome.h"
+#import "AppDelegate.h"
+#import "WWPhoto.h"
+#import <CoreLocation/CoreLocation.h>
+#import "SDMDataManager.h"
+#import "SDMQueryOperation.h"
+#import "NSString+Util.h"
 
 
 #define kButtonSize 200.0
@@ -22,7 +28,7 @@
 
 
 
-@interface WWMainViewController () <ADBannerViewDelegate> {
+@interface WWMainViewController () <ADBannerViewDelegate, SDMQueryOperationDelegate, UIAlertViewDelegate> {
     ADBannerView    *_banner;
     BOOL            _bannerVisible;
     BOOL            _alreadyLoad;
@@ -46,6 +52,16 @@
     
     __weak BFPaperButton    *_btnMap;
     __weak UILabel     *_lblMap;
+    
+    __weak BFPaperButton *_btnClose;
+    __weak UILabel  *_lblClose;
+    __weak BFPaperButton    *_btnCheck;
+    __weak UILabel  *_lblCheck;
+    __weak UIView   *_viewPhotoResult;
+    __weak UIImageView  *_imvResult;
+    
+    WWPhoto *_curentPhoto;
+    CLLocationCoordinate2D  _currentLocation;
 }
 
 @end
@@ -69,8 +85,20 @@
     [_banner setDelegate:self];
 }
 
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([kAppDelegate isSavedImage]) {
+        [kAppDelegate setIsSavedImage:NO];
+        [kAppDelegate retrieveLocationWith:self callback:@selector(resultLocation:) andCallbackError:@selector(resultLocationError:)];
+    }
+}
+
+
 - (void) loadView {
     [super loadView];
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
     
     CGRect mainRect = [WWUtils getMainScreenBounds];
     
@@ -85,7 +113,7 @@
 //    }
     
     if (!_lblRecord) {
-        UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake((mainRect.size.width - kButtonSize)/2, (mainRect.size.height - kButtonSize)/2, kButtonSize, kButtonSize)];
+        UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake((mainRect.size.width - kButtonSize)/2, (mainRect.size.height - kButtonSize)/2 - 50.0, kButtonSize, kButtonSize)];
         [lbl setTextAlignment:NSTextAlignmentCenter];
         lbl.textColor = kCOLOR_BACKGROUND;
         
@@ -120,8 +148,8 @@
         [btn setTitle:@"" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(showGallery) forControlEvents:UIControlEventTouchUpInside];
         btn.layer.cornerRadius = 5.0;
-        btn.layer.borderColor = kCOLOR_BACKGROUND.CGColor;
-        btn.layer.borderWidth = 1.0;
+//        btn.layer.borderColor = kCOLOR_BACKGROUND.CGColor;
+//        btn.layer.borderWidth = 1.0;
         [self.view addSubview:btn];
         _btnGallery = btn;
     }
@@ -143,16 +171,71 @@
         [btn setTitle:@"" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(showMap) forControlEvents:UIControlEventTouchUpInside];
         btn.layer.cornerRadius = 5.0;
-        btn.layer.borderColor = kCOLOR_BACKGROUND.CGColor;
-        btn.layer.borderWidth = 1.0;
+//        btn.layer.borderColor = kCOLOR_BACKGROUND.CGColor;
+//        btn.layer.borderWidth = 1.0;
         [self.view addSubview:btn];
         _btnMap = btn;
     }
     
+    if (!_viewPhotoResult) {
+        UIView *vResult = [[UIView alloc] initWithFrame:self.view.bounds];
+        [vResult setBackgroundColor:[UIColor whiteColor]];
+        [self.view addSubview:vResult];
+        vResult.hidden = YES;
+        _viewPhotoResult = vResult;
+    }
     
+    if (!_imvResult) {
+        UIImageView *imv = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, _viewPhotoResult.frame.size.width, _viewPhotoResult.frame.size.height)];
+        [_viewPhotoResult addSubview:imv];
+        _imvResult = imv;
+    }
+    
+    if (!_lblClose) {
+        UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0,  10, kHistorySize, kHistorySize)];
+        lbl.textColor = kCOLOR_BACKGROUND;
+        lbl.textAlignment = NSTextAlignmentCenter;
+        lbl.font = kDefaultFontButton;
+        FAKFontAwesome *font = [FAKFontAwesome timesIconWithSize:kHistorySize];
+        lbl.attributedText = [font attributedString];
+        [_viewPhotoResult addSubview:lbl];
+        _lblClose = lbl;
+    }
+    
+    if (!_btnClose) {
+        BFPaperButton *btn = [[BFPaperButton alloc] initFlatWithFrame:_lblClose.frame];
+        [btn setBackgroundColor:[UIColor clearColor]];
+        [btn setTitle:@"" forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(cancelResult) forControlEvents:UIControlEventTouchUpInside];
+        btn.layer.cornerRadius = 5.0;
+        [_viewPhotoResult addSubview:btn];
+        _btnClose = btn;
+    }
+    
+    
+    if (!_lblCheck) {
+        UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(_viewPhotoResult.frame.size.width - kHistorySize - 10,  10, kHistorySize, kHistorySize)];
+        lbl.textColor = kCOLOR_BACKGROUND;
+        lbl.textAlignment = NSTextAlignmentCenter;
+        lbl.font = kDefaultFontButton;
+        FAKFontAwesome *font = [FAKFontAwesome checkIconWithSize:kHistorySize];
+        lbl.attributedText = [font attributedString];
+        [_viewPhotoResult addSubview:lbl];
+        _lblCheck = lbl;
+    }
+    
+    if (!_btnCheck) {
+        BFPaperButton *btn = [[BFPaperButton alloc] initFlatWithFrame:_lblCheck.frame];
+        [btn setBackgroundColor:[UIColor clearColor]];
+        [btn setTitle:@"" forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(applyResult) forControlEvents:UIControlEventTouchUpInside];
+        btn.layer.cornerRadius = 5.0;
+        [_viewPhotoResult addSubview:btn];
+        _btnCheck = btn;
+    }
 }
 
-
+#pragma mark - Action
 - (void) startTakePhoto {
     AOCaptureViewController *captureVC = [[AOCaptureViewController alloc] init];
     [self showHUD];
@@ -167,6 +250,108 @@
 
 - (void) showGallery {
     
+}
+
+- (void) processPhoto {
+    if ([kAppDelegate imageCaptured]) {
+        if (!_curentPhoto) {
+            _curentPhoto = [[WWPhoto alloc] init];
+        }
+        [_curentPhoto setDateSaved:[NSDate date]];
+        [_curentPhoto setImage:[kAppDelegate imageCaptured]];
+        [_curentPhoto setName:[WWUtils dateToString:[NSDate date] withFormat:kDateFormat]];
+        //            [self startProgressDetail:photo];
+    }
+}
+
+- (void) showResult {
+    _viewPhotoResult.transform = CGAffineTransformMakeScale(0.0, 0.0);
+    [UIView animateWithDuration:0.5 animations:^{
+        _viewPhotoResult.transform = CGAffineTransformIdentity;
+        _imvResult.image = [kAppDelegate imageCaptured];
+    } completion:^(BOOL finished) {
+        _viewPhotoResult.hidden = NO;
+    }];
+}
+
+- (void) hideResult {
+    [UIView animateWithDuration:0.5 animations:^{
+        _viewPhotoResult.transform = CGAffineTransformMakeScale(0.00001, 0.00001);
+    } completion:^(BOOL finished) {
+        _viewPhotoResult.hidden = YES;
+    }];
+}
+
+- (void) cancelResult {
+    [self hideResult];
+}
+
+- (void) applyResult {
+    UIAlertView *alr = [[UIAlertView alloc] initWithTitle:@"Input" message:@"Please enter name and notes" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [[alr textFieldAtIndex:0] setPlaceholder:@"Enter name"];
+    [[alr textFieldAtIndex:1] setPlaceholder:@"Enter notes"];
+    alr.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alr show];
+}
+
+#pragma mark - Retrieve current location
+- (void) resultLocation:(CLLocation *)location {
+    _currentLocation = location.coordinate;
+    _curentPhoto.latitude = _curentPhoto.latitude;
+    _curentPhoto.longitude = _curentPhoto.longitude;
+    [self showResult];
+//    if (_isAddPlace) {
+//        if (_getLocationOneTime) {
+//            _getLocationOneTime = NO;
+//            WTAddNotesViewController *addVC = [[WTAddNotesViewController alloc] init];
+//            [addVC setLocation:_currentLocation];
+//            //        [self.navigationController presentViewController:addVC animated:NO completion:NULL];
+//            [self.navigationController pushViewController:addVC animated:NO];
+//        }
+//    } else {
+//        [_mapView setRegion:MKCoordinateRegionMakeWithDistance(_currentLocation, kMapZoomSize, kMapZoomSize) animated:YES];
+//        [self requestShopNearByDistance:5000];
+//    }
+}
+
+- (void) resultLocationError:(NSError *)error {
+    [self showResult];
+//    if (_isAddPlace) {
+//        if (_getLocationOneTime) {
+//            _getLocationOneTime = NO;
+//            WTAddNotesViewController *addVC = [[WTAddNotesViewController alloc] init];
+//            [addVC setLocation:_currentLocation];
+//            //        [self presentViewController:addVC animated:NO completion:NULL];
+//            [self.navigationController pushViewController:addVC animated:NO];
+//            //        [self.navigationController presentViewController:addVC animated:NO completion:NULL];
+//        }
+//    } else {
+//        [self requestShopNearByDistance:1000];
+//    }
+}
+
+
+#pragma mark - UIAlertView Deleate
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        UITextField *name = [alertView textFieldAtIndex:0];
+        UITextField *notes = [alertView textFieldAtIndex:1];
+        NSString *nameStr = name.text ? name.text : @"";
+        NSString *notesStr = notes.text ? notes.text : @"";
+        _curentPhoto.name = nameStr;
+        _curentPhoto.notes = notesStr;
+        [[SDMDataManager sharedInstance] setController:self];
+        [[SDMDataManager sharedInstance] savePhoto:_curentPhoto];
+    }
+}
+
+#pragma mark - QueryOperation
+- (void) operation:(SDMQueryOperation *)op didFinishedWithResult:(NSArray *)result {
+    
+}
+
+- (void) operation:(SDMQueryOperation *)op didInsertOrUpdateSuccess:(BOOL)success {
+    [self hideResult];
 }
 
 #pragma mark - ADBanner Delegate
