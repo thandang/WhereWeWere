@@ -70,7 +70,7 @@
         CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
         // If the status is denied or only granted for when in use, display an alert
         if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusDenied) {
-            UIAlertView *alr = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"message", nil) message:NSLocalizedString(@"location_confirm", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:NSLocalizedString(@"setting", nil), nil];
+            UIAlertView *alr = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"message", nil) message:@"Turn On Location Services to Allow AlphaOmega to Determine Your Location" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:NSLocalizedString(@"setting", nil), nil];
             [alr show];
         }
         // The user has not enabled any location services. Request background authorization.

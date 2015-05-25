@@ -298,6 +298,7 @@
     
     UITextField * alertTextField2 = [alr textFieldAtIndex:1];
     alertTextField2.keyboardType = UIKeyboardTypeDefault;
+    alertTextField2.secureTextEntry = NO;
     alertTextField2.placeholder = @"Enter notes";
 
     [alr show];
