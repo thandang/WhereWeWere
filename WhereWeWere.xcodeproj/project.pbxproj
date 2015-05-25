@@ -14,6 +14,9 @@
 		7571521D1B13085C00541BDB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7571521C1B13085C00541BDB /* Images.xcassets */; };
 		757152201B13085C00541BDB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7571521E1B13085C00541BDB /* LaunchScreen.xib */; };
 		7571522C1B13085C00541BDB /* WhereWeWereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7571522B1B13085C00541BDB /* WhereWeWereTests.m */; };
+		757152401B13092A00541BDB /* WWCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7571523F1B13092A00541BDB /* WWCommonViewController.m */; };
+		757152431B13096700541BDB /* WWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152421B13096700541BDB /* WWMainViewController.m */; };
+		757152461B13097B00541BDB /* WWHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152451B13097B00541BDB /* WWHistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		757152251B13085C00541BDB /* WhereWeWereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereWeWereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571522A1B13085C00541BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571522B1B13085C00541BDB /* WhereWeWereTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhereWeWereTests.m; sourceTree = "<group>"; };
+		7571523E1B13092A00541BDB /* WWCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWCommonViewController.h; path = Components/WWCommonViewController.h; sourceTree = "<group>"; };
+		7571523F1B13092A00541BDB /* WWCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWCommonViewController.m; path = Components/WWCommonViewController.m; sourceTree = "<group>"; };
+		757152411B13096700541BDB /* WWMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWMainViewController.h; sourceTree = "<group>"; };
+		757152421B13096700541BDB /* WWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWMainViewController.m; sourceTree = "<group>"; };
+		757152441B13097B00541BDB /* WWHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWHistoryViewController.h; sourceTree = "<group>"; };
+		757152451B13097B00541BDB /* WWHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWHistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,12 @@
 		7571520E1B13085C00541BDB /* WhereWeWere */ = {
 			isa = PBXGroup;
 			children = (
+				7571523A1B1308A800541BDB /* CoreData */,
+				757152391B1308A000541BDB /* Models */,
+				757152381B13089700541BDB /* Libtaries */,
+				757152371B13089200541BDB /* Utils */,
+				757152361B13088B00541BDB /* Components */,
+				757152351B13088300541BDB /* ViewAndControllers */,
 				757152131B13085C00541BDB /* AppDelegate.h */,
 				757152141B13085C00541BDB /* AppDelegate.m */,
 				757152161B13085C00541BDB /* ViewController.h */,
@@ -117,6 +132,62 @@
 				7571522A1B13085C00541BDB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		757152351B13088300541BDB /* ViewAndControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7571523B1B1308C900541BDB /* Views */,
+				757152411B13096700541BDB /* WWMainViewController.h */,
+				757152421B13096700541BDB /* WWMainViewController.m */,
+				757152441B13097B00541BDB /* WWHistoryViewController.h */,
+				757152451B13097B00541BDB /* WWHistoryViewController.m */,
+			);
+			name = ViewAndControllers;
+			sourceTree = "<group>";
+		};
+		757152361B13088B00541BDB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7571523E1B13092A00541BDB /* WWCommonViewController.h */,
+				7571523F1B13092A00541BDB /* WWCommonViewController.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		757152371B13089200541BDB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		757152381B13089700541BDB /* Libtaries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libtaries;
+			sourceTree = "<group>";
+		};
+		757152391B1308A000541BDB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7571523A1B1308A800541BDB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		7571523B1B1308C900541BDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +234,7 @@
 		757152041B13085C00541BDB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WW;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Than Dang";
 				TargetAttributes = {
@@ -220,7 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				757152181B13085C00541BDB /* ViewController.m in Sources */,
+				757152401B13092A00541BDB /* WWCommonViewController.m in Sources */,
 				757152151B13085C00541BDB /* AppDelegate.m in Sources */,
+				757152461B13097B00541BDB /* WWHistoryViewController.m in Sources */,
+				757152431B13096700541BDB /* WWMainViewController.m in Sources */,
 				757152121B13085C00541BDB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +424,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WhereWeWere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,7 +436,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = WhereWeWere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
