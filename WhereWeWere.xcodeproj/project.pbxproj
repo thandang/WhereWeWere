@@ -24,6 +24,13 @@
 		3697371D1B14B729008A2FC0 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3697370B1B14B729008A2FC0 /* UIProgressView+AFNetworking.m */; };
 		3697371E1B14B729008A2FC0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3697370D1B14B729008A2FC0 /* UIRefreshControl+AFNetworking.m */; };
 		3697371F1B14B729008A2FC0 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3697370F1B14B729008A2FC0 /* UIWebView+AFNetworking.m */; };
+		369737211B14CFE8008A2FC0 /* IMG_3017.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 369737201B14CFE8008A2FC0 /* IMG_3017.JPG */; };
+		369737281B14D573008A2FC0 /* NeoSansStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 369737231B14D573008A2FC0 /* NeoSansStd-Light.otf */; };
+		369737291B14D573008A2FC0 /* NeoSansStd-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 369737241B14D573008A2FC0 /* NeoSansStd-LightItalic.otf */; };
+		3697372A1B14D573008A2FC0 /* NeoSansStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 369737251B14D573008A2FC0 /* NeoSansStd-Medium.otf */; };
+		3697372B1B14D573008A2FC0 /* NeoSansStd-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 369737261B14D573008A2FC0 /* NeoSansStd-MediumItalic.otf */; };
+		3697372C1B14D573008A2FC0 /* NeoSansStd-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 369737271B14D573008A2FC0 /* NeoSansStd-Regular.otf */; };
+		3697372E1B14D7D9008A2FC0 /* new.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3697372D1B14D7D9008A2FC0 /* new.gpx */; };
 		36A3933D1B1372EE00286664 /* NSData+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393241B1372EE00286664 /* NSData+Util.m */; };
 		36A3933E1B1372EE00286664 /* NSDate+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393261B1372EE00286664 /* NSDate+Util.m */; };
 		36A3933F1B1372EE00286664 /* NSDictionary+NotNullValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393281B1372EE00286664 /* NSDictionary+NotNullValue.m */; };
@@ -133,6 +140,13 @@
 		3697370D1B14B729008A2FC0 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "Libraries/AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		3697370E1B14B729008A2FC0 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "Libraries/AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		3697370F1B14B729008A2FC0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "Libraries/AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		369737201B14CFE8008A2FC0 /* IMG_3017.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_3017.JPG; path = ../../../../../Desktop/IMG_3017.JPG; sourceTree = "<group>"; };
+		369737231B14D573008A2FC0 /* NeoSansStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NeoSansStd-Light.otf"; path = "Resources/NeoSansStd-Light.otf"; sourceTree = "<group>"; };
+		369737241B14D573008A2FC0 /* NeoSansStd-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NeoSansStd-LightItalic.otf"; path = "Resources/NeoSansStd-LightItalic.otf"; sourceTree = "<group>"; };
+		369737251B14D573008A2FC0 /* NeoSansStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NeoSansStd-Medium.otf"; path = "Resources/NeoSansStd-Medium.otf"; sourceTree = "<group>"; };
+		369737261B14D573008A2FC0 /* NeoSansStd-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NeoSansStd-MediumItalic.otf"; path = "Resources/NeoSansStd-MediumItalic.otf"; sourceTree = "<group>"; };
+		369737271B14D573008A2FC0 /* NeoSansStd-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NeoSansStd-Regular.otf"; path = "Resources/NeoSansStd-Regular.otf"; sourceTree = "<group>"; };
+		3697372D1B14D7D9008A2FC0 /* new.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = new.gpx; path = ../new.gpx; sourceTree = "<group>"; };
 		36A393221B1372DC00286664 /* WhereWeWere-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhereWeWere-Prefix.pch"; sourceTree = "<group>"; };
 		36A393231B1372EE00286664 /* NSData+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Util.h"; path = "Utils/NSData+Util.h"; sourceTree = "<group>"; };
 		36A393241B1372EE00286664 /* NSData+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Util.m"; path = "Utils/NSData+Util.m"; sourceTree = "<group>"; };
@@ -312,6 +326,18 @@
 			name = AFNetworking;
 			sourceTree = "<group>";
 		};
+		369737221B14D562008A2FC0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				369737231B14D573008A2FC0 /* NeoSansStd-Light.otf */,
+				369737241B14D573008A2FC0 /* NeoSansStd-LightItalic.otf */,
+				369737251B14D573008A2FC0 /* NeoSansStd-Medium.otf */,
+				369737261B14D573008A2FC0 /* NeoSansStd-MediumItalic.otf */,
+				369737271B14D573008A2FC0 /* NeoSansStd-Regular.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		36A393211B1371B200286664 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +457,7 @@
 		757152031B13085C00541BDB = {
 			isa = PBXGroup;
 			children = (
+				3697372D1B14D7D9008A2FC0 /* new.gpx */,
 				36A393211B1371B200286664 /* Frameworks */,
 				7571520E1B13085C00541BDB /* WhereWeWere */,
 				757152281B13085C00541BDB /* WhereWeWereTests */,
@@ -450,6 +477,7 @@
 		7571520E1B13085C00541BDB /* WhereWeWere */ = {
 			isa = PBXGroup;
 			children = (
+				369737221B14D562008A2FC0 /* Resources */,
 				7571523A1B1308A800541BDB /* CoreData */,
 				757152391B1308A000541BDB /* Models */,
 				757152381B13089700541BDB /* Libtaries */,
@@ -496,6 +524,7 @@
 		757152351B13088300541BDB /* ViewAndControllers */ = {
 			isa = PBXGroup;
 			children = (
+				369737201B14CFE8008A2FC0 /* IMG_3017.JPG */,
 				36A393921B1383CB00286664 /* MapViews */,
 				36A3937E1B1373A500286664 /* EECollectionFlowLayout.h */,
 				36A3937F1B1373A500286664 /* EECollectionFlowLayout.m */,
@@ -660,13 +689,20 @@
 			files = (
 				36A393691B13736900286664 /* ionicons.ttf in Resources */,
 				7571521B1B13085C00541BDB /* Main.storyboard in Resources */,
+				3697372B1B14D573008A2FC0 /* NeoSansStd-MediumItalic.otf in Resources */,
+				369737291B14D573008A2FC0 /* NeoSansStd-LightItalic.otf in Resources */,
+				369737211B14CFE8008A2FC0 /* IMG_3017.JPG in Resources */,
 				757152201B13085C00541BDB /* LaunchScreen.xib in Resources */,
+				369737281B14D573008A2FC0 /* NeoSansStd-Light.otf in Resources */,
 				36A3936A1B13736900286664 /* zocial-regular-webfont.ttf in Resources */,
 				36A3938C1B1373B900286664 /* database.sqlite in Resources */,
+				3697372A1B14D573008A2FC0 /* NeoSansStd-Medium.otf in Resources */,
 				36A393671B13736900286664 /* FontAwesome.otf in Resources */,
 				7571521D1B13085C00541BDB /* Images.xcassets in Resources */,
 				36A393681B13736900286664 /* foundation-icons.ttf in Resources */,
 				36A393A81B1383EA00286664 /* HHDetailKaraView.xib in Resources */,
+				3697372E1B14D7D9008A2FC0 /* new.gpx in Resources */,
+				3697372C1B14D573008A2FC0 /* NeoSansStd-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,13 +909,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: hoa tran (XDA76K73J6)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: hoa tran (JB9RNKHS2H)";
 				GCC_PREFIX_HEADER = "WhereWeWere/WhereWeWere-Prefix.pch";
 				INFOPLIST_FILE = WhereWeWere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1e22a503-081c-41fb-8c25-f7602576e750";
+				PROVISIONING_PROFILE = "42f68b3f-b3a9-4f9d-af76-a05fdd40558a";
 			};
 			name = Debug;
 		};
@@ -888,13 +924,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: hoa tran (XDA76K73J6)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: hoa tran (JB9RNKHS2H)";
 				GCC_PREFIX_HEADER = "WhereWeWere/WhereWeWere-Prefix.pch";
 				INFOPLIST_FILE = WhereWeWere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1e22a503-081c-41fb-8c25-f7602576e750";
+				PROVISIONING_PROFILE = "42f68b3f-b3a9-4f9d-af76-a05fdd40558a";
 			};
 			name = Release;
 		};

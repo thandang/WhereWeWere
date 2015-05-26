@@ -119,15 +119,15 @@
     
     CGRect mainRect = [WWUtils getMainScreenBounds];
     
-//    if (!_lblDescription) {
-//        UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 70.0, mainRect.size.width - 20, 30.0)];
-//        lbl.textAlignment = NSTextAlignmentCenter;
-//        lbl.textColor = kCOLOR_BACKGROUND;
-//        lbl.font = kBigFont;
-//        lbl.text = @"Making some fun";
-//        [self.view addSubview:lbl];
-//        _lblDescription = lbl;
-//    }
+    if (!_lblDescription) {
+        UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 50.0, mainRect.size.width - 20, 30.0)];
+        lbl.textAlignment = NSTextAlignmentCenter;
+        lbl.textColor = kCOLOR_BACKGROUND;
+        lbl.font = kBigFont;
+        lbl.text = @"Where we were";
+        [self.view addSubview:lbl];
+        _lblDescription = lbl;
+    }
     
     if (!_lblRecord) {
         UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake((mainRect.size.width - kButtonSize)/2, (mainRect.size.height - kButtonSize)/2 - 50.0, kButtonSize, kButtonSize)];
@@ -255,6 +255,7 @@
     [self presentViewController:captureVC animated:NO completion:^{
         [self hideHUD];
     }];
+//    [self processPhoto];
 }
 
 - (void) showMap {
@@ -269,7 +270,6 @@
 
 - (void) processPhoto {
     [self showHUD];
-    [kAppDelegate retrieveLocationWith:self callback:@selector(resultLocation:) andCallbackError:@selector(resultLocationError:)];
     if ([kAppDelegate imageCaptured]) {
         if (!_curentPhoto) {
             _curentPhoto = [[WWPhoto alloc] init];
@@ -277,14 +277,27 @@
         [_curentPhoto setDateSaved:[NSDate date]];
         [_curentPhoto setImage:[kAppDelegate imageCaptured]];
         [_curentPhoto setName:[WWUtils dateToString:[NSDate date] withFormat:kDateFormat]];
+    } else {
+        if (!_curentPhoto) {
+            _curentPhoto = [[WWPhoto alloc] init];
+        }
+        [_curentPhoto setDateSaved:[NSDate date]];
+        [_curentPhoto setImage:[UIImage imageNamed:@"IMG_3017.JPG"]];
+        [_curentPhoto setName:[WWUtils dateToString:[NSDate date] withFormat:kDateFormat]];
     }
+    [kAppDelegate retrieveLocationWith:self callback:@selector(resultLocation:) andCallbackError:@selector(resultLocationError:)];
 }
 
 - (void) showResult {
     _viewPhotoResult.transform = CGAffineTransformMakeScale(0.0, 0.0);
     [UIView animateWithDuration:0.5 animations:^{
         _viewPhotoResult.transform = CGAffineTransformIdentity;
-        _imvResult.image = [kAppDelegate imageCaptured];
+        if ([kAppDelegate imageCaptured]) {
+            _imvResult.image = [kAppDelegate imageCaptured];
+        } else {
+            _imvResult.image = [UIImage imageNamed:@"IMG_3017.JPG"];
+        }
+        
     } completion:^(BOOL finished) {
         [self hideHUD];
         _viewPhotoResult.hidden = NO;
