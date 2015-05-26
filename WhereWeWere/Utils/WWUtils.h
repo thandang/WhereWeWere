@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 @interface WWUtils : NSObject
 
@@ -31,5 +32,6 @@
 
 + (UIView *) getMainView;
 + (UIColor *)defaultBackgroundColor;
++ (void)setRegionByCenter:(MKMapView *)mapView_;
 
 @end

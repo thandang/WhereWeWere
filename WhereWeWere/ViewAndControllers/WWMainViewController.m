@@ -20,13 +20,30 @@
 #import "SDMDataManager.h"
 #import "SDMQueryOperation.h"
 #import "NSString+Util.h"
+#import "WWMapViewController.h"
+#import "WWHistoryViewController.h"
 
 
 #define kButtonSize 200.0
 #define kButtonSmall    80.0
 #define kHistorySize    40.0
 
+@interface UIImageView (screenshot)
 
+@end
+
+@implementation UIImageView (screenshot)
+
+- (UIImage *)screenshot {
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.layer renderInContext:context];
+    UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return snapshotImage;
+}
+
+@end
 
 @interface WWMainViewController () <ADBannerViewDelegate, SDMQueryOperationDelegate, UIAlertViewDelegate> {
     ADBannerView    *_banner;
@@ -148,8 +165,6 @@
         [btn setTitle:@"" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(showGallery) forControlEvents:UIControlEventTouchUpInside];
         btn.layer.cornerRadius = 5.0;
-//        btn.layer.borderColor = kCOLOR_BACKGROUND.CGColor;
-//        btn.layer.borderWidth = 1.0;
         [self.view addSubview:btn];
         _btnGallery = btn;
     }
@@ -171,8 +186,6 @@
         [btn setTitle:@"" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(showMap) forControlEvents:UIControlEventTouchUpInside];
         btn.layer.cornerRadius = 5.0;
-//        btn.layer.borderColor = kCOLOR_BACKGROUND.CGColor;
-//        btn.layer.borderWidth = 1.0;
         [self.view addSubview:btn];
         _btnMap = btn;
     }
@@ -245,11 +258,13 @@
 }
 
 - (void) showMap {
-    
+    WWMapViewController *map = [[WWMapViewController alloc] init];
+    [self.navigationController pushViewController:map animated:NO];
 }
 
 - (void) showGallery {
-    
+    WWHistoryViewController *history = [[WWHistoryViewController alloc] init];
+    [self.navigationController pushViewController:history animated:NO];
 }
 
 - (void) processPhoto {
@@ -310,34 +325,10 @@
     _curentPhoto.latitude = _curentPhoto.latitude;
     _curentPhoto.longitude = _curentPhoto.longitude;
     [self showResult];
-//    if (_isAddPlace) {
-//        if (_getLocationOneTime) {
-//            _getLocationOneTime = NO;
-//            WTAddNotesViewController *addVC = [[WTAddNotesViewController alloc] init];
-//            [addVC setLocation:_currentLocation];
-//            //        [self.navigationController presentViewController:addVC animated:NO completion:NULL];
-//            [self.navigationController pushViewController:addVC animated:NO];
-//        }
-//    } else {
-//        [_mapView setRegion:MKCoordinateRegionMakeWithDistance(_currentLocation, kMapZoomSize, kMapZoomSize) animated:YES];
-//        [self requestShopNearByDistance:5000];
-//    }
 }
 
 - (void) resultLocationError:(NSError *)error {
     [self showResult];
-//    if (_isAddPlace) {
-//        if (_getLocationOneTime) {
-//            _getLocationOneTime = NO;
-//            WTAddNotesViewController *addVC = [[WTAddNotesViewController alloc] init];
-//            [addVC setLocation:_currentLocation];
-//            //        [self presentViewController:addVC animated:NO completion:NULL];
-//            [self.navigationController pushViewController:addVC animated:NO];
-//            //        [self.navigationController presentViewController:addVC animated:NO completion:NULL];
-//        }
-//    } else {
-//        [self requestShopNearByDistance:1000];
-//    }
 }
 
 
@@ -353,6 +344,16 @@
         [self showHUD];
         [[SDMDataManager sharedInstance] setController:self];
         [[SDMDataManager sharedInstance] savePhoto:_curentPhoto];
+        
+        NSString *pathToSave = [[[DOCUMENT_FOLDER stringByAppendingPathComponent:FOLDER_PHOTOS] stringByAppendingPathComponent:_curentPhoto.name] stringByAppendingPathExtension:@"png"];
+        [[NSFileManager defaultManager] createDirectoryAtPath:[pathToSave stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
+        
+        NSData *binaryImage = UIImagePNGRepresentation([_imvResult screenshot]);
+        
+        BOOL success = [binaryImage writeToFile:pathToSave atomically:YES];
+        if (!success) {
+            DEBUG_LOG(@"save image failed");
+        }
     }
 }
 

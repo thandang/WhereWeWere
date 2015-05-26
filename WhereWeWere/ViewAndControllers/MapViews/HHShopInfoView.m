@@ -8,6 +8,7 @@
 
 #import "HHShopInfoView.h"
 #import "WWPhoto.h"
+#import "BFPaperButton.h"
 
 #define kShadowRadius 1.0
 #define kShadowOpacity 0.7
@@ -23,53 +24,43 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = kCOLOR_BACKGROUND;
+        if (!_txtShopName) {
+            UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 3.0, frame.size.width - 60, 21.0)];
+            lbl.font = kDefaultFontButton;
+            lbl.textColor = [UIColor whiteColor];
+            [self addSubview:lbl];
+            _txtShopName = lbl;
+        }
+        if (!_txtNotes) {
+            UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 25.0, frame.size.width - 60, 30.0)];
+            lbl.font = kTimeFont;
+            lbl.textColor = [UIColor whiteColor];
+            [self addSubview:lbl];
+            _txtNotes = lbl;
+        }
+        if (!_img) {
+            UIImageView *imv = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width - 50.0, (frame.size.height - 40.0)/2, 40.0, 40.0)];
+            [self addSubview:imv];
+            _img = imv;
+        }
     }
     return self;
 }
 
-- (id) loadViewFromNib {
-    NSArray* nibViews =  [[NSBundle mainBundle] loadNibNamed:@"HHShopInfoView" owner:self options:nil];
-    for( id obj in nibViews ) {
-        if( [obj isMemberOfClass:[HHShopInfoView class]] ) {
-            return obj;
-        }
-    }
-    
-    for( id obj in nibViews ) {
-        if( [obj isKindOfClass:[HHShopInfoView class]] ) {
-            return obj;
-        }
-    }
-    return nil;
-}
+
 
 - (void) configShopInfo:(WWPhoto *)photo {
     self.backgroundColor = kCOLOR_BACKGROUND;
-    txtShopName.text = photo.name;
-    txtShopName.numberOfLines = 0;
-    [txtShopName sizeToFit];
+    _txtShopName.text = photo.name;
     
-    txtAddress.frame = CGRectMake(txtAddress.frame.origin.x, txtShopName.frame.size.height + txtShopName.frame.origin.y + 2, 275.0, txtAddress.frame.size.height);
-    txtAddress.numberOfLines = 0;
-    txtAddress.text = [NSString stringWithFormat:@"Notes: %@", photo.notes];
-    [txtAddress sizeToFit];
+    _txtNotes.frame = CGRectMake(_txtShopName.frame.origin.x, _txtShopName.frame.size.height + _txtShopName.frame.origin.y + 2, 275.0, _txtShopName.frame.size.height);
+    _txtNotes.numberOfLines = 0;
+    _txtNotes.text = [NSString stringWithFormat:@"Notes: %@", photo.notes];
+    [_txtNotes sizeToFit];
     
     
-    CGRect selfRect = self.frame;
-    selfRect.size.height = txtAddress.frame.size.height + txtAddress.frame.origin.y + 5;
-    self.frame = selfRect;
-    
-//    txtPhone.frame = CGRectMake(txtPhone.frame.origin.x, txtAddress.frame.origin.y + txtAddress.frame.size.height + 2, 275.0, txtPhone.frame.size.height);
-//    txtPhone.text = [NSString stringWithFormat:@"Phone: %@", place.notes];
-//    txtPhone.numberOfLines = 0;
-//    [txtPhone sizeToFit];
-    
-    
-//    CGRect selfRect = self.frame;
-//    selfRect.size.height = txtPhone.frame.size.height + txtPhone.frame.origin.y + 5;
-//    self.frame = selfRect;
-    
-    [btnArrow setFrame:CGRectMake(btnArrow.frame.origin.x, (selfRect.size.height - btnArrow.frame.size.height)/2, btnArrow.frame.size.width, btnArrow.frame.size.height)];
+    _img.image = photo.image;
     _photo = photo;
     [self drawCellShadow];
     [self setNeedsDisplay];
@@ -113,15 +104,8 @@
     cellLayer.shadowPath = shadowPath.CGPath;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
-- (IBAction)detailClicked:(id)sender {
+- (void)detailClicked:(id)sender {
     if (self.delegate && [self.delegate respondsToSelector:@selector(shopInfoDetailDidClick:)]) {
         [self.delegate shopInfoDetailDidClick:_photo];
     }

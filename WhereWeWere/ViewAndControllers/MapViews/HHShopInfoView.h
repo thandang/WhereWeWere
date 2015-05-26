@@ -7,21 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class BFPaperButton;
 @protocol HHShopInfoDelegate;
 
 @class WWPhoto;
 @interface HHShopInfoView : UIView {
-    __weak IBOutlet UILabel *txtShopName;
-    __weak IBOutlet UILabel *txtAddress;
-    __weak IBOutlet UILabel *txtPhone;
-    __weak IBOutlet UIButton *btnArrow;
-    
+    __weak  UILabel *_txtShopName;
+    __weak  UILabel *_txtNotes;
+    __weak  UIImageView *_img;
+    __weak BFPaperButton *_btnBackground;
 }
 
 @property (nonatomic, weak) id<HHShopInfoDelegate>delegate;
 
-- (id) loadViewFromNib;
 
 - (void) configShopInfo:(WWPhoto *)photo;
 

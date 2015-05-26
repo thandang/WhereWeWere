@@ -100,3 +100,8 @@ Stuff; \
 _Pragma("clang diagnostic pop") \
 } while (0)
 
+#define kNotificationReload @"notification_reload_map"
+#define d2r (M_PI / 180.0)
+#define kMapZoomSize            500.0
+#define kURL_GOOGLE_DIRECTION @"http://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@&sensor=false&unit=metric&mode=driving"
+
