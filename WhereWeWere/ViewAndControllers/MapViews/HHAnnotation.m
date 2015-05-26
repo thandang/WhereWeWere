@@ -34,6 +34,7 @@
         if (title_)
             title = title_;
         _locatinType = locationType_;
+
         self.photo = photo;
     }
     return self;

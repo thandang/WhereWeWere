@@ -123,7 +123,7 @@
     
     [self.view addSubview:_inforShopView];
     
-    
+    _mainView = [WWUtils getMainView];
     if (!_viewImage) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, _mainView.frame.size.width, _mainView.frame.size.height)];
         [view setBackgroundColor:[UIColor whiteColor]];
@@ -214,7 +214,6 @@
     HHAnnotation *annotation = (HHAnnotation *)annotationView.annotation;
     _annotationSeleted = annotation.coordinate;
     [self showAnnotation:annotation];
-    //    [_indicator startAnimating];
     [self showHUD];
     //call google direction api
     NSString *sAddress = [NSString stringWithFormat:@"%f,%f", _currentLocation.latitude, _currentLocation.longitude];
@@ -223,7 +222,6 @@
     NSURL *urlRequest = [NSURL URLWithString:finalUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:urlRequest];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    //    operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *realResponse = [NSJSONSerialization JSONObjectWithData:[operation.responseString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:nil];

@@ -322,8 +322,8 @@
 #pragma mark - Retrieve current location
 - (void) resultLocation:(CLLocation *)location {
     _currentLocation = location.coordinate;
-    _curentPhoto.latitude = _curentPhoto.latitude;
-    _curentPhoto.longitude = _curentPhoto.longitude;
+    _curentPhoto.latitude = _currentLocation.latitude;
+    _curentPhoto.longitude = _currentLocation.longitude;
     [self showResult];
 }
 

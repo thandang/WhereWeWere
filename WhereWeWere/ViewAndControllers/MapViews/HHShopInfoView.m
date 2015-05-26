@@ -44,6 +44,14 @@
             [self addSubview:imv];
             _img = imv;
         }
+        if (!_btnBackground) {
+            BFPaperButton *btn = [[BFPaperButton alloc] initFlatWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
+            [btn setTitle:@"" forState:UIControlStateNormal];
+            [btn setBackgroundColor:[UIColor clearColor]];
+            [btn addTarget:self action:@selector(detailClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:btn];
+            _btnBackground = btn;
+        }
     }
     return self;
 }
@@ -60,8 +68,11 @@
     [_txtNotes sizeToFit];
     
     
-    _img.image = photo.image;
+    UIImage *image = [WWUtils imageWithName:photo.name];
+    
+    _img.image = image;
     _photo = photo;
+    _photo.image = image;
     [self drawCellShadow];
     [self setNeedsDisplay];
 }

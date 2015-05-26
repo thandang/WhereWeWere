@@ -18,7 +18,7 @@
         HHAnnotation *anno = (HHAnnotation *)annotation;
         UIImage *img = nil;
         if (anno.locatinType == SHOP) {
-            img = [UIImage imageNamed:@"pin"];
+            img = [UIImage imageNamed:@"marker"];
         }
         self.image = img;
         CGPoint notNear = CGPointMake(10000, 10000);
