@@ -24,7 +24,6 @@
 		3697371D1B14B729008A2FC0 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3697370B1B14B729008A2FC0 /* UIProgressView+AFNetworking.m */; };
 		3697371E1B14B729008A2FC0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3697370D1B14B729008A2FC0 /* UIRefreshControl+AFNetworking.m */; };
 		3697371F1B14B729008A2FC0 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3697370F1B14B729008A2FC0 /* UIWebView+AFNetworking.m */; };
-		369737211B14CFE8008A2FC0 /* IMG_3017.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 369737201B14CFE8008A2FC0 /* IMG_3017.JPG */; };
 		369737281B14D573008A2FC0 /* NeoSansStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 369737231B14D573008A2FC0 /* NeoSansStd-Light.otf */; };
 		369737291B14D573008A2FC0 /* NeoSansStd-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 369737241B14D573008A2FC0 /* NeoSansStd-LightItalic.otf */; };
 		3697372A1B14D573008A2FC0 /* NeoSansStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 369737251B14D573008A2FC0 /* NeoSansStd-Medium.otf */; };
@@ -140,7 +139,6 @@
 		3697370D1B14B729008A2FC0 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "Libraries/AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		3697370E1B14B729008A2FC0 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "Libraries/AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		3697370F1B14B729008A2FC0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "Libraries/AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		369737201B14CFE8008A2FC0 /* IMG_3017.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_3017.JPG; path = ../../../../../Desktop/IMG_3017.JPG; sourceTree = "<group>"; };
 		369737231B14D573008A2FC0 /* NeoSansStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NeoSansStd-Light.otf"; path = "Resources/NeoSansStd-Light.otf"; sourceTree = "<group>"; };
 		369737241B14D573008A2FC0 /* NeoSansStd-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NeoSansStd-LightItalic.otf"; path = "Resources/NeoSansStd-LightItalic.otf"; sourceTree = "<group>"; };
 		369737251B14D573008A2FC0 /* NeoSansStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NeoSansStd-Medium.otf"; path = "Resources/NeoSansStd-Medium.otf"; sourceTree = "<group>"; };
@@ -524,7 +522,6 @@
 		757152351B13088300541BDB /* ViewAndControllers */ = {
 			isa = PBXGroup;
 			children = (
-				369737201B14CFE8008A2FC0 /* IMG_3017.JPG */,
 				36A393921B1383CB00286664 /* MapViews */,
 				36A3937E1B1373A500286664 /* EECollectionFlowLayout.h */,
 				36A3937F1B1373A500286664 /* EECollectionFlowLayout.m */,
@@ -691,7 +688,6 @@
 				7571521B1B13085C00541BDB /* Main.storyboard in Resources */,
 				3697372B1B14D573008A2FC0 /* NeoSansStd-MediumItalic.otf in Resources */,
 				369737291B14D573008A2FC0 /* NeoSansStd-LightItalic.otf in Resources */,
-				369737211B14CFE8008A2FC0 /* IMG_3017.JPG in Resources */,
 				757152201B13085C00541BDB /* LaunchScreen.xib in Resources */,
 				369737281B14D573008A2FC0 /* NeoSansStd-Light.otf in Resources */,
 				36A3936A1B13736900286664 /* zocial-regular-webfont.ttf in Resources */,

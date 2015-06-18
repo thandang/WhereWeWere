@@ -46,7 +46,8 @@
 @end
 
 @interface WWMainViewController () <ADBannerViewDelegate, SDMQueryOperationDelegate, UIAlertViewDelegate> {
-    ADBannerView    *_banner;
+//    ADBannerView    *_banner;
+    ADBannerView *_bannerView;
     BOOL            _bannerVisible;
     BOOL            _alreadyLoad;
     
@@ -79,6 +80,9 @@
     
     WWPhoto *_curentPhoto;
     CLLocationCoordinate2D  _currentLocation;
+    
+    __weak UIView   *_contentView;
+    
 }
 
 @end
@@ -95,11 +99,62 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        if ([ADBannerView instancesRespondToSelector:@selector(initWithAdType:)]) {
+            _bannerView = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+        } else {
+            _bannerView = [[ADBannerView alloc] init];
+        }
+        _bannerView.delegate = self;
+    }
+    return self;
+}
+
+- (void)layoutAnimated:(BOOL)animated {
+    CGRect contentFrame = self.view.bounds;
+    
+    CGRect bannerFrame = _bannerView.frame;
+    if (_bannerView.bannerLoaded) {
+        contentFrame.size.height -= _bannerView.frame.size.height;
+        bannerFrame.origin.y = contentFrame.size.height;
+    } else {
+        bannerFrame.origin.y = contentFrame.size.height;
+    }
+    
+    [UIView animateWithDuration:animated ? 0.25 : 0.0 animations:^{
+        _contentView.frame = contentFrame;
+        [self.view layoutIfNeeded];
+        _bannerView.frame = bannerFrame;
+    }];
+}
+
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    _banner = [[ADBannerView alloc] initWithFrame:CGRectMake(0.0, self.view.frame.size.height, self.view.frame.size.width, 50.0)];
-    [_banner setDelegate:self];
+    [self layoutAnimated:NO];
+}
+
+- (void)viewDidLayoutSubviews {
+    [self layoutAnimated:[UIView areAnimationsEnabled]];
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    [self layoutAnimated:YES];
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    [self layoutAnimated:YES];
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
+    return YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner {
+    
 }
 
 
@@ -117,7 +172,16 @@
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
+    [self.view addSubview:_bannerView];
+    
     CGRect mainRect = [WWUtils getMainScreenBounds];
+    
+    if (!_contentView) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, mainRect.size.width, mainRect.size.height)];
+        [view setBackgroundColor:[UIColor clearColor]];
+        [self.view addSubview:view];
+        _contentView = view;
+    }
     
     if (!_lblDescription) {
         UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 50.0, mainRect.size.width - 20, 30.0)];
@@ -125,7 +189,7 @@
         lbl.textColor = kCOLOR_BACKGROUND;
         lbl.font = kBigFont;
         lbl.text = @"Where we were";
-        [self.view addSubview:lbl];
+        [_contentView addSubview:lbl];
         _lblDescription = lbl;
     }
     
@@ -145,7 +209,7 @@
         [btn setTitle:@"" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(startTakePhoto) forControlEvents:UIControlEventTouchUpInside];
         btn.layer.cornerRadius = kButtonSize/2;
-        [self.view addSubview:btn];
+        [_contentView addSubview:btn];
         _btnRecord = btn;
     }
     
@@ -156,7 +220,7 @@
         lbl.font = kDefaultFontButton;
         FAKFontAwesome *font = [FAKFontAwesome fileImageOIconWithSize:kButtonSmall];
         lbl.attributedText = [font attributedString];
-        [self.view addSubview:lbl];
+        [_contentView addSubview:lbl];
         _lblGallery = lbl;
     }
     if (!_btnGallery) {
@@ -165,7 +229,7 @@
         [btn setTitle:@"" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(showGallery) forControlEvents:UIControlEventTouchUpInside];
         btn.layer.cornerRadius = 5.0;
-        [self.view addSubview:btn];
+        [_contentView addSubview:btn];
         _btnGallery = btn;
     }
     
@@ -176,7 +240,7 @@
         lbl.font = kDefaultFontButton;
         FAKFontAwesome *font = [FAKFontAwesome mapMarkerIconWithSize:kButtonSmall];
         lbl.attributedText = [font attributedString];
-        [self.view addSubview:lbl];
+        [_contentView addSubview:lbl];
         _lblMap = lbl;
     }
     
@@ -186,14 +250,14 @@
         [btn setTitle:@"" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(showMap) forControlEvents:UIControlEventTouchUpInside];
         btn.layer.cornerRadius = 5.0;
-        [self.view addSubview:btn];
+        [_contentView addSubview:btn];
         _btnMap = btn;
     }
     
     if (!_viewPhotoResult) {
         UIView *vResult = [[UIView alloc] initWithFrame:self.view.bounds];
         [vResult setBackgroundColor:[UIColor whiteColor]];
-        [self.view addSubview:vResult];
+        [_contentView addSubview:vResult];
         vResult.hidden = YES;
         _viewPhotoResult = vResult;
     }
@@ -380,27 +444,27 @@
     [self hideHUD];
 }
 
-#pragma mark - ADBanner Delegate
-- (void) bannerViewDidLoadAd:(ADBannerView *)banner {
-    if (!_bannerVisible) {
-        //If banner isn't part of view hierachy, add it
-        if (_banner.superview == nil) {
-            [self.view addSubview:_banner];
-        }
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
-        [UIView commitAnimations];
-        _bannerVisible = YES;
-    }
-}
-
-- (void) bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    if (_bannerVisible) {
-        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
-        [UIView commitAnimations];
-        _bannerVisible = NO;
-    }
-}
+//#pragma mark - ADBanner Delegate
+//- (void) bannerViewDidLoadAd:(ADBannerView *)banner {
+//    if (!_bannerVisible) {
+//        //If banner isn't part of view hierachy, add it
+//        if (_banner.superview == nil) {
+//            [self.view addSubview:_banner];
+//        }
+//        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+//        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+//        [UIView commitAnimations];
+//        _bannerVisible = YES;
+//    }
+//}
+//
+//- (void) bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+//    if (_bannerVisible) {
+//        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+//        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+//        [UIView commitAnimations];
+//        _bannerVisible = NO;
+//    }
+//}
 
 @end
