@@ -188,7 +188,7 @@
         lbl.textAlignment = NSTextAlignmentCenter;
         lbl.textColor = kCOLOR_BACKGROUND;
         lbl.font = kBigFont;
-        lbl.text = @"Where we were";
+        lbl.text = @"Place Of Us";
         [_contentView addSubview:lbl];
         _lblDescription = lbl;
     }
@@ -264,6 +264,8 @@
     
     if (!_imvResult) {
         UIImageView *imv = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, _viewPhotoResult.frame.size.width, _viewPhotoResult.frame.size.height)];
+        [imv setBackgroundColor:[UIColor whiteColor]];
+        imv.contentMode = UIViewContentModeScaleAspectFit;
         [_viewPhotoResult addSubview:imv];
         _imvResult = imv;
     }
@@ -314,12 +316,15 @@
 
 #pragma mark - Action
 - (void) startTakePhoto {
-    AOCaptureViewController *captureVC = [[AOCaptureViewController alloc] init];
-    [self showHUD];
-    [self presentViewController:captureVC animated:NO completion:^{
-        [self hideHUD];
-    }];
-//    [self processPhoto];
+//    AOCaptureViewController *captureVC = [[AOCaptureViewController alloc] init];
+//    [self showHUD];
+//    [self presentViewController:captureVC animated:NO completion:^{
+//        [self hideHUD];
+//    }];
+
+    [kAppDelegate setImageCaptured:[UIImage imageNamed:@"IMG_3017.JPG"]];
+    [self processPhoto];
+    _lblRecord.hidden = YES;
 }
 
 - (void) showMap {

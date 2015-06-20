@@ -77,12 +77,12 @@
 		36A393B41B13855200286664 /* WWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393B31B13855200286664 /* WWPhoto.m */; };
 		36A393B91B1385BF00286664 /* AOCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393B61B1385BF00286664 /* AOCaptureManager.m */; };
 		36A393BA1B1385BF00286664 /* AOCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A393B81B1385BF00286664 /* AOCaptureViewController.m */; };
+		36C747531B353D1400BD7704 /* IMG_3017.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 36C747521B353D1400BD7704 /* IMG_3017.JPG */; };
 		757152121B13085C00541BDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152111B13085C00541BDB /* main.m */; };
 		757152151B13085C00541BDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 757152141B13085C00541BDB /* AppDelegate.m */; };
 		7571521B1B13085C00541BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757152191B13085C00541BDB /* Main.storyboard */; };
 		7571521D1B13085C00541BDB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7571521C1B13085C00541BDB /* Images.xcassets */; };
 		757152201B13085C00541BDB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7571521E1B13085C00541BDB /* LaunchScreen.xib */; };
-		7571522C1B13085C00541BDB /* WhereWeWereTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7571522B1B13085C00541BDB /* WhereWeWereTests.m */; };
 		757152401B13092A00541BDB /* WWCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7571523F1B13092A00541BDB /* WWCommonViewController.m */; };
 		757152481B130A1800541BDB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757152471B130A1800541BDB /* CoreLocation.framework */; };
 		7571524A1B130A1D00541BDB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757152491B130A1D00541BDB /* UIKit.framework */; };
@@ -91,16 +91,6 @@
 		757152501B130A3100541BDB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7571524F1B130A3100541BDB /* libz.dylib */; };
 		757152521B130A3800541BDB /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 757152511B130A3800541BDB /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		757152261B13085C00541BDB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 757152041B13085C00541BDB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7571520B1B13085C00541BDB;
-			remoteInfo = WhereWeWere;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		369736EA1B14B247008A2FC0 /* WWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWCollectionViewCell.h; path = ViewAndControllers/WWCollectionViewCell.h; sourceTree = "<group>"; };
@@ -238,7 +228,8 @@
 		36A393B61B1385BF00286664 /* AOCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOCaptureManager.m; path = Components/AOCaptureManager.m; sourceTree = "<group>"; };
 		36A393B71B1385BF00286664 /* AOCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOCaptureViewController.h; path = Components/AOCaptureViewController.h; sourceTree = "<group>"; };
 		36A393B81B1385BF00286664 /* AOCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOCaptureViewController.m; path = Components/AOCaptureViewController.m; sourceTree = "<group>"; };
-		7571520C1B13085C00541BDB /* WhereWeWere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereWeWere.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36C747521B353D1400BD7704 /* IMG_3017.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IMG_3017.JPG; path = ../../../../../../Desktop/IMG_3017.JPG; sourceTree = "<group>"; };
+		7571520C1B13085C00541BDB /* PlaceOfUs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaceOfUs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757152101B13085C00541BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757152111B13085C00541BDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		757152131B13085C00541BDB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -246,7 +237,6 @@
 		7571521A1B13085C00541BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7571521C1B13085C00541BDB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7571521F1B13085C00541BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		757152251B13085C00541BDB /* WhereWeWereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereWeWereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7571522A1B13085C00541BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7571522B1B13085C00541BDB /* WhereWeWereTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhereWeWereTests.m; sourceTree = "<group>"; };
 		7571523E1B13092A00541BDB /* WWCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWCommonViewController.h; path = Components/WWCommonViewController.h; sourceTree = "<group>"; };
@@ -270,13 +260,6 @@
 				7571524C1B130A2700541BDB /* Foundation.framework in Frameworks */,
 				7571524A1B130A1D00541BDB /* UIKit.framework in Frameworks */,
 				757152481B130A1800541BDB /* CoreLocation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		757152221B13085C00541BDB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,8 +449,7 @@
 		7571520D1B13085C00541BDB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7571520C1B13085C00541BDB /* WhereWeWere.app */,
-				757152251B13085C00541BDB /* WhereWeWereTests.xctest */,
+				7571520C1B13085C00541BDB /* PlaceOfUs.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -475,6 +457,7 @@
 		7571520E1B13085C00541BDB /* WhereWeWere */ = {
 			isa = PBXGroup;
 			children = (
+				36C747521B353D1400BD7704 /* IMG_3017.JPG */,
 				369737221B14D562008A2FC0 /* Resources */,
 				7571523A1B1308A800541BDB /* CoreData */,
 				757152391B1308A000541BDB /* Models */,
@@ -620,26 +603,8 @@
 			);
 			name = WhereWeWere;
 			productName = WhereWeWere;
-			productReference = 7571520C1B13085C00541BDB /* WhereWeWere.app */;
+			productReference = 7571520C1B13085C00541BDB /* PlaceOfUs.app */;
 			productType = "com.apple.product-type.application";
-		};
-		757152241B13085C00541BDB /* WhereWeWereTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 757152321B13085C00541BDB /* Build configuration list for PBXNativeTarget "WhereWeWereTests" */;
-			buildPhases = (
-				757152211B13085C00541BDB /* Sources */,
-				757152221B13085C00541BDB /* Frameworks */,
-				757152231B13085C00541BDB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				757152271B13085C00541BDB /* PBXTargetDependency */,
-			);
-			name = WhereWeWereTests;
-			productName = WhereWeWereTests;
-			productReference = 757152251B13085C00541BDB /* WhereWeWereTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -653,14 +618,11 @@
 				TargetAttributes = {
 					7571520B1B13085C00541BDB = {
 						CreatedOnToolsVersion = 6.3;
-					};
-					757152241B13085C00541BDB = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 7571520B1B13085C00541BDB;
+						DevelopmentTeam = 26C89WRD9Q;
 					};
 				};
 			};
-			buildConfigurationList = 757152071B13085C00541BDB /* Build configuration list for PBXProject "WhereWeWere" */;
+			buildConfigurationList = 757152071B13085C00541BDB /* Build configuration list for PBXProject "PlaceOfUs" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -674,7 +636,6 @@
 			projectRoot = "";
 			targets = (
 				7571520B1B13085C00541BDB /* WhereWeWere */,
-				757152241B13085C00541BDB /* WhereWeWereTests */,
 			);
 		};
 /* End PBXProject section */
@@ -686,6 +647,7 @@
 			files = (
 				36A393691B13736900286664 /* ionicons.ttf in Resources */,
 				7571521B1B13085C00541BDB /* Main.storyboard in Resources */,
+				36C747531B353D1400BD7704 /* IMG_3017.JPG in Resources */,
 				3697372B1B14D573008A2FC0 /* NeoSansStd-MediumItalic.otf in Resources */,
 				369737291B14D573008A2FC0 /* NeoSansStd-LightItalic.otf in Resources */,
 				757152201B13085C00541BDB /* LaunchScreen.xib in Resources */,
@@ -699,13 +661,6 @@
 				36A393A81B1383EA00286664 /* HHDetailKaraView.xib in Resources */,
 				3697372E1B14D7D9008A2FC0 /* new.gpx in Resources */,
 				3697372C1B14D573008A2FC0 /* NeoSansStd-Regular.otf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		757152231B13085C00541BDB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,23 +735,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		757152211B13085C00541BDB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7571522C1B13085C00541BDB /* WhereWeWereTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		757152271B13085C00541BDB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7571520B1B13085C00541BDB /* WhereWeWere */;
-			targetProxy = 757152261B13085C00541BDB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		757152191B13085C00541BDB /* Main.storyboard */ = {
@@ -905,13 +844,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: hoa tran (JB9RNKHS2H)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huynh Anh Phung (26C89WRD9Q)";
 				GCC_PREFIX_HEADER = "WhereWeWere/WhereWeWere-Prefix.pch";
 				INFOPLIST_FILE = WhereWeWere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "42f68b3f-b3a9-4f9d-af76-a05fdd40558a";
+				PRODUCT_NAME = PlaceOfUs;
+				PROVISIONING_PROFILE = "4b0644d6-ec45-407c-92a0-49af7d763226";
 			};
 			name = Debug;
 		};
@@ -920,54 +859,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: hoa tran (JB9RNKHS2H)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Huynh Anh Phung (26C89WRD9Q)";
 				GCC_PREFIX_HEADER = "WhereWeWere/WhereWeWere-Prefix.pch";
 				INFOPLIST_FILE = WhereWeWere/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "42f68b3f-b3a9-4f9d-af76-a05fdd40558a";
-			};
-			name = Release;
-		};
-		757152331B13085C00541BDB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WhereWeWereTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhereWeWere.app/WhereWeWere";
-			};
-			name = Debug;
-		};
-		757152341B13085C00541BDB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WhereWeWereTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhereWeWere.app/WhereWeWere";
+				PRODUCT_NAME = PlaceOfUs;
+				PROVISIONING_PROFILE = "4b0644d6-ec45-407c-92a0-49af7d763226";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		757152071B13085C00541BDB /* Build configuration list for PBXProject "WhereWeWere" */ = {
+		757152071B13085C00541BDB /* Build configuration list for PBXProject "PlaceOfUs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7571522D1B13085C00541BDB /* Debug */,
@@ -981,15 +886,6 @@
 			buildConfigurations = (
 				757152301B13085C00541BDB /* Debug */,
 				757152311B13085C00541BDB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		757152321B13085C00541BDB /* Build configuration list for PBXNativeTarget "WhereWeWereTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				757152331B13085C00541BDB /* Debug */,
-				757152341B13085C00541BDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -63,10 +63,12 @@ static NSString * const reuseIdentifier = @"cellIdentifier";
     
     if (!_photoViewer) {
         UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, _viewImage.frame.size.width, _viewImage.frame.size.height)];
-        [img setBackgroundColor:[UIColor clearColor]];
+        [img setBackgroundColor:[UIColor whiteColor]];
+        img.contentMode = UIViewContentModeScaleAspectFit;
         [_viewImage addSubview:img];
         _photoViewer = img;
     }
+    [_photoViewer setBackgroundColor:[UIColor whiteColor]];
     if (!_lblDescription) {
         UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 20.0, _viewImage.frame.size.width - 20, 100.0)];
         lbl.font = kTimeFont;

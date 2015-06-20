@@ -23,6 +23,8 @@
     if (self) {
         if (!_img) {
             UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
+            img.contentMode = UIViewContentModeScaleAspectFit;
+            [img setBackgroundColor:[UIColor whiteColor]];
             [self addSubview:img];
             _img = img;
         }
